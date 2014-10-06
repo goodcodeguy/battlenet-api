@@ -79,6 +79,7 @@ module Battlenet
 			include Battlenet::Modules::WOW::Auction
 			include Battlenet::Modules::WOW::BattlePet
 			include Battlenet::Modules::WOW::ChallengeMode
+			include Battlenet::Modules::WOW::CharacterProfile
 
 			def initialize(api_key = nil, region = :us)
 				super(api_key, :wow, region)
