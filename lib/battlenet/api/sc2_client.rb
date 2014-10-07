@@ -8,9 +8,7 @@ module Battlenet
 
   class SC2Client < Client
 
-    include Battlenet::Modules::SC2::Profile
-    include Battlenet::Modules::SC2::Ladder
-    include Battlenet::Modules::SC2::Data
+    include Battlenet::SC2
 
     def initialize(api_key = nil, region = :us)
       super(api_key, :sc2, region)
