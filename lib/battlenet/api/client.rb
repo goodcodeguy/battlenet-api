@@ -6,12 +6,12 @@ module Battlenet
     class Client
       include HTTParty
 
-      def initialize(api_key = nil, game = :wow, region = :us)
+      def initialize(api_key = nil, region = :us)
         
         @api_key = api_key
+        @endpoint = nil
 
         domain   = region_uri(region)
-        endpoint = endpoint(game)
 
         self.class.base_uri "https://#{domain}#{endpoint}"
 
@@ -32,17 +32,9 @@ module Battlenet
         end
       end
 
-      def endpoint(game = :wow)
-        endpoint = case game
-        when :wow
-          '/wow'
-        when :sc2
-          '/sc2'
-        when :d3
-          '/d3'
-        else
-          raise "Invalid game: #{game.to_s}"
-        end
+      def endpoint
+          raise "Invalid Game Endpoint" if @endpoint == nil
+          @endpoint
       end
 
       def get(path, params = {})

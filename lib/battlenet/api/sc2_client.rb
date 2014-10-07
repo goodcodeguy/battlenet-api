@@ -11,7 +11,11 @@ module Battlenet
     include Battlenet::SC2
 
     def initialize(api_key = nil, region = :us)
-      super(api_key, :sc2, region)
+      super(api_key, region)
+    end
+
+    def endpoint
+      @endpoint = '/sc2'
     end
 
   end

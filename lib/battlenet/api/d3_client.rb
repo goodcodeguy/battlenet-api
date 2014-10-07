@@ -10,7 +10,11 @@ module Battlenet
     include Battlenet::D3
 
     def initialize(api_key = nil, region = :us)
-      super(api_key, :d3, region)
+      super(api_key, region)
+    end
+
+    def endpoint
+      @endpoint = '/d3'
     end
 
   end
