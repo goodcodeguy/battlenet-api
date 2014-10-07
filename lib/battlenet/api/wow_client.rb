@@ -16,26 +16,26 @@ require 'battlenet/modules/wow/data'
 
 module Battlenet
 
-		class WOWClient < Client
+    class WOWClient < Client
 
-			include Battlenet::Modules::WOW::Achievement
-			include Battlenet::Modules::WOW::Auction
-			include Battlenet::Modules::WOW::BattlePet
-			include Battlenet::Modules::WOW::ChallengeMode
-			include Battlenet::Modules::WOW::CharacterProfile
-			include Battlenet::Modules::WOW::Guild
-			include Battlenet::Modules::WOW::Item
-			include Battlenet::Modules::WOW::PVP
-			include Battlenet::Modules::WOW::Quest
-			include Battlenet::Modules::WOW::Realm
-			include Battlenet::Modules::WOW::Recipe
-			include Battlenet::Modules::WOW::Spell
-			include Battlenet::Modules::WOW::Data
+      include Battlenet::Modules::WOW::Achievement
+      include Battlenet::Modules::WOW::Auction
+      include Battlenet::Modules::WOW::BattlePet
+      include Battlenet::Modules::WOW::ChallengeMode
+      include Battlenet::Modules::WOW::CharacterProfile
+      include Battlenet::Modules::WOW::Guild
+      include Battlenet::Modules::WOW::Item
+      include Battlenet::Modules::WOW::PVP
+      include Battlenet::Modules::WOW::Quest
+      include Battlenet::Modules::WOW::Realm
+      include Battlenet::Modules::WOW::Recipe
+      include Battlenet::Modules::WOW::Spell
+      include Battlenet::Modules::WOW::Data
 
-			def initialize(api_key = nil, region = :us)
-				super(api_key, :wow, region)
-			end
+      def initialize(api_key = nil, region = :us)
+        super(api_key, :wow, region)
+      end
 
-		end
+    end
 
 end
