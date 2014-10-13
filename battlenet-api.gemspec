@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["goodcodeguy"]
   spec.email         = ["goodcodeguy@gmail.com"]
   spec.summary       = "Battlenet Client API"
-  spec.description   = "Battlenet client API"
-  spec.homepage      = ""
+  spec.description   = "API Wrapper for the Battlenet API"
+  spec.homepage      = "https://github.com/goodcodeguy/battlenet-api"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
