@@ -1,6 +1,14 @@
 # Battlenet API Gem [![Dependency Status](https://gemnasium.com/goodcodeguy/battlenet-api.svg)](https://gemnasium.com/goodcodeguy/battlenet-api) [![Code Climate](https://codeclimate.com/github/goodcodeguy/battlenet-api/badges/gpa.svg)](https://codeclimate.com/github/goodcodeguy/battlenet-api)
 
-TODO:
+## Installation
+
+`$ gem install battlenet-api`
+
+## How to Use
+
+`TODO!`
+
+## TODO
 
 - Community OAuth Profile APIs
 - Account APIs
