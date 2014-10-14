@@ -20,8 +20,9 @@ module Battlenet
 
       include Battlenet::WOW
 
-      def initialize(api_key = nil, region = :us)
-        super(api_key, region)
+      def initialize(options={})
+        options["endpoint"] = '/wow'
+        super(options)
       end
 
       def endpoint

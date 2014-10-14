@@ -6,14 +6,17 @@ module Battlenet
     class Client
       include HTTParty
 
-      def initialize(api_key = nil, region = :us)
+      attr_accessor *Configuration::OPTIONS_KEYS
+
+      def initialize(options={})
         
-        @api_key = api_key
-        @endpoint = nil
+        options = Battlenet.options.merge(options)
 
-        domain   = region_uri(region)
+        Configuration::OPTIONS_KEYS.each do |key|
+          send("#{key}=", options[key])
+        end
 
-        self.class.base_uri "https://#{domain}#{endpoint}"
+        # self.class.base_uri "https://#{domain}#{endpoint}"
 
       end
 
