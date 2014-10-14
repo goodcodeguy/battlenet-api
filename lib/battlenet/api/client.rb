@@ -16,12 +16,12 @@ module Battlenet
           send("#{key}=", options[key])
         end
 
-        # self.class.base_uri "https://#{domain}#{endpoint}"
+        self.class.base_uri "https://#{domain}#{endpoint}"
 
       end
 
-      def region_uri(region = :us)
-        domain = case region
+      def domain
+        domain = case @region
         when :us
           'us.api.battle.net'
         when :eu

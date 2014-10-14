@@ -10,12 +10,13 @@ module Battlenet
 
     include Battlenet::SC2
 
-    def initialize(api_key = nil, region = :us)
-      super(api_key, region)
+    def initialize(options = {})
+      options = client_defaults.merge(options)
+      super(options)
     end
 
-    def endpoint
-      @endpoint = '/sc2'
+    def client_defaults
+      { :endpoint => '/sc2', :region => :us }
     end
 
   end

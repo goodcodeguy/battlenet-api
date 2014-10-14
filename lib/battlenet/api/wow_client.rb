@@ -16,19 +16,20 @@ require 'battlenet/modules/wow/data'
 
 module Battlenet
 
-    class WOWClient < Client
+  class WOWClient < Client
 
-      include Battlenet::WOW
 
-      def initialize(options={})
-        options["endpoint"] = '/wow'
-        super(options)
-      end
+    include Battlenet::WOW
 
-      def endpoint
-        @endpoint = '/wow'
-      end
-
+    def initialize(options={})
+      options = client_defaults.merge(options)
+      super(options)
     end
+
+    def client_defaults
+      { :endpoint => '/wow', :region => :us }
+    end
+
+  end
 
 end

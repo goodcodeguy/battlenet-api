@@ -9,12 +9,13 @@ module Battlenet
 
     include Battlenet::D3
 
-    def initialize(api_key = nil, region = :us)
-      super(api_key, region)
+    def initialize(options = {})
+      options = client_defaults.merge(options)
+      super(options)
     end
 
-    def endpoint
-      @endpoint = '/d3'
+    def client_defaults
+      { :endpoint => '/d3', :region => :us }
     end
 
   end
