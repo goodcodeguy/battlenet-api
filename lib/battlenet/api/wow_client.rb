@@ -18,13 +18,7 @@ module Battlenet
 
   class WOWClient < Client
 
-
     include Battlenet::WOW
-
-    def initialize(options={})
-      options = client_defaults.merge(options)
-      super(options)
-    end
 
     def client_defaults
       { :endpoint => '/wow', :region => :us }
