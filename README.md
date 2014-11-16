@@ -21,6 +21,7 @@ end
 ````ruby
 client = Battlenet.WOWClient
 
+# Available Methods
 client.achievement(id)
 client.auction_data_status(realm)
 
@@ -50,12 +51,44 @@ client.character_talents(realm, character_name)
 client.character_titles(realm, character_name)
 client.character_audit(realm, character_name)
 
+client.data_battlegroups
+client.data_character_races
+client.data_character_classes
+client.data_character_achievements
+client.data_guild_rewards
+client.data_guild_perks
+client.data_guild_achievements
+client.data_item_classes
+client.data_talents
+client.data_pet_types
+
+client.guild_profile(realm, guild_name)
+client.guild_members(realm, guild_name)
+client.guild_achievements(realm, guild_name)
+client.guild_news(realm, guild_name)
+client.guild_challenge(realm, guild_name)
+
+client.item(item_id)
+client.item_set(set_id)
+
+client.pvp_leaderboards(bracket)
+
+client.quest(quest_id)
+
+client.realm_status
+
+client.recipe(recipe_id)
+
+client.spell(spell_id)
+
 ````
 
 ### Diablo 3 Client
 
 ````ruby
 client = Battlenet.D3Client
+
+#Available Methods
 
 client.data_item(data_id)
 client.data_follower(follower_id)
@@ -69,6 +102,8 @@ client.hero_profile(battletag,hero_id)
 
 ````ruby
 client = Battlenet.S2Client
+
+#Available Methods
 
 client.achievements
 client.rewards
