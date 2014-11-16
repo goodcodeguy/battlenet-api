@@ -42,4 +42,34 @@ describe Battlenet::WOWClient do
   it { should respond_to(:character_titles) }
   it { should respond_to(:character_audit) }
 
+  it { should respond_to(:data_battlegroups) }
+  it { should respond_to(:data_character_races) }
+  it { should respond_to(:data_character_classes) }
+  it { should respond_to(:data_character_achievements) }
+  it { should respond_to(:data_guild_rewards) }
+  it { should respond_to(:data_guild_perks) }
+  it { should respond_to(:data_guild_achievements) }
+  it { should respond_to(:data_item_classes) }
+  it { should respond_to(:data_talents) }
+  it { should respond_to(:data_pet_types) }
+
+  it { should respond_to(:guild_profile) }
+  it { should respond_to(:guild_members) }
+  it { should respond_to(:guild_achievements) }
+  it { should respond_to(:guild_news) }
+  it { should respond_to(:guild_challenge) }
+
+  it { should respond_to(:item) }
+  it { should respond_to(:item_set) }
+
+  it { should respond_to(:pvp_leaderboards)}
+
+  it { should respond_to(:quest) }
+
+  it { should respond_to(:realm_status) }
+
+  it { should respond_to(:recipe) }
+
+  it { should respond_to(:spell) }
+
 end
