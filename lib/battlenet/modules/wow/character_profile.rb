@@ -2,6 +2,14 @@ require 'uri'
 
 module Battlenet
   module WOW
+    class CharacterProfile
+
+      attr_accessor :name, :realm, :battlegroup, :klass, :race,
+                    :gender, :level, :achievementPoints, :thumbnail,
+                    :calcClass, :totalHonorableKills
+
+    end
+
     def character_profile(realm, character_name, options = {})
       realm = URI.escape realm
       character_name = URI.escape character_name
