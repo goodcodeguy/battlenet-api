@@ -1,7 +1,6 @@
-require 'battlenet/api/client'
+require File.expand_path('../client', __FILE__)
 
-require 'battlenet/modules/d3/profile'
-require 'battlenet/modules/d3/data'
+Dir[File.expand_path('../../modules/d3/*.rb', __FILE__)].each{|f| require f}
 
 module Battlenet
 
