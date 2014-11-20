@@ -1,4 +1,5 @@
 require 'battlenet/api/version'
+require 'battlenet/api/api_response'
 require 'httparty'
 
 module Battlenet
