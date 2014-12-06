@@ -7,17 +7,15 @@ describe Battlenet::Client do
       config.region  = :eu
     end
 
-    c = Battlenet.WOWClient
-    expect(c.region).to eq(:eu)
-  end
+    a = Battlenet.WOWClient
+    expect(a.region).to eq(:eu)
 
-  it "should have the default region of :us" do
     Battlenet.configure do |config|
-      config.api_key = 'test-api'
+      config.region = :us
     end
 
-    c = Battlenet.WOWClient
-    expect(c.region).to eq(:us)
+    b = Battlenet.WOWClient
+    expect(b.region).to eq(:us)
+    
   end
-
 end

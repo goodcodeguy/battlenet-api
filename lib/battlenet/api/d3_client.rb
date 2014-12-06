@@ -8,8 +8,11 @@ module Battlenet
 
     include Battlenet::D3
 
-    def client_defaults
-      { :endpoint => '/d3', :region => :us }
+    def initialize(options = {})
+      client_settings = { :endpoint => '/d3' }
+      client_settings = client_settings.merge(options)
+
+      super(client_settings)
     end
 
   end

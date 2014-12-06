@@ -10,8 +10,6 @@ module Battlenet
       attr_accessor *Configuration::OPTIONS_KEYS
 
       def initialize(options={})
-
-        options = Battlenet.options.merge(client_defaults)
         options = Battlenet.options.merge(options)
 
         Configuration::OPTIONS_KEYS.each do |key|
