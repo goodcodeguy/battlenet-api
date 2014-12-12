@@ -1,116 +1,84 @@
-require 'uri'
-
-Dir[File.expand_path('../character/*.rb', __FILE__)].each{|f| require f}
-
 module Battlenet
   module WOW
-    def character_profile(realm, character_name, options = {})
-      realm = URI.escape realm
-      character_name = URI.escape character_name
+    class CharacterProfile < Battlenet::APIResponse
 
-      get "/character/#{realm}/#{character_name}", options
-    end
-    def character_achievements(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'achievements' })
+      def initialize(options={})
+        @realm          = options.delete(:realm)
+        @character_name = options.delete(:character_name)
 
-      character_profile(realm, character_name, options)
-    end
-    def character_appearance(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'appearance' })
+        @endpoint       = "/character/#{@realm}/#{@character_name}"
 
-      character_profile(realm, character_name, options)
-    end
-    def character_feed(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'feed' })
+        super(options)
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_guild(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'guild' })
+      def achievements
+        get_data(@endpoint, {:fields => 'achievements'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_hunter_pets(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'hunter_pets' })
+      def appearance
+        get_data(@endpoint, {:fields => 'appearance'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_items(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'items' })
+      def feed
+        get_data(@endpoint, {:fields => 'feed'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_mounts(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'mounts' })
+      def guild
+        get_data(@endpoint, {:fields => 'guild'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_pets(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'pets' })
+      def hunter_pets
+        get_data(@endpoint, {:fields => 'hunterPets'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_pet_slots(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'pet_slots' })
+      def pets
+        get_data(@endpoint, {:fields => 'pets'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_progression(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'progression' })
+      def items
+        get_data(@endpoint, {:fields => 'items'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_pvp(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'pvp' })
+      def mounts
+        get_data(@endpoint, {:fields => 'mounts'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_quests(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'quests' })
+      def pet_slots
+        get_data(@endpoint, {:fields => 'petSlots'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_reputation(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'reputation' })
+      def progression
+        get_data(@endpoint, {:fields => 'progression'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_stats(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'stats' })
+      def pvp
+        get_data(@endpoint, {:fields => 'pvp'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_talents(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'talents' })
+      def quests
+        get_data(@endpoint, {:fields => 'quests'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_titles(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'titles' })
+      def reputation
+        get_data(@endpoint, {:fields => 'reputation'})
+      end
 
-      character_profile(realm, character_name, options)
-    end
-    def character_audit(realm, character_name, options = {})
-      options[:query] ||= {}
-      options[:query].merge!({ :fields => 'audit' })
+      def stats
+        get_data(@endpoint, {:fields => 'stats'})
+      end
 
-      character_profile(realm, character_name, options)
+      def talents
+        get_data(@endpoint, {:fields => 'talents'})
+      end
+
+      def titles
+        get_data(@endpoint, {:fields => 'titles'})
+      end
+
+      def audit
+        get_data(@endpoint, {:fields => 'audit'})
+      end
+
     end
   end
 end
