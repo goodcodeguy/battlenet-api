@@ -1,6 +1,7 @@
 require 'battlenet/api/client'
 
 require 'battlenet/modules/wow/character_profile'
+require 'battlenet/modules/wow/guild_profile'
 
 #Dir[File.expand_path('../modules/wow/*.rb', __FILE__)].each{|f| require f}
 
@@ -18,6 +19,11 @@ module Battlenet
     def character_profile(options = {})
       opts = options.merge({:client => self})
       Battlenet::WOW::CharacterProfile.new(opts)
+    end
+
+    def guild_profile(options = {})
+      opts = options.merge({:client => self})
+      Battlenet::WOW::GuildProfile.new(opts)
     end
 
   end

@@ -1,13 +1,8 @@
 require 'battlenet/api'
 
 describe Battlenet::WOW::CharacterProfile do
-  before(:all) do
-    Battlenet.configure do |config|
-      config.api_key = '5g856v32mx5bwx3rwxzkt9z9yrehtuq2'
-      config.region  = :us
-    end
-  end
 
+  it { should respond_to(:profile) }
   it { should respond_to(:achievements) }
   it { should respond_to(:feed) }
   it { should respond_to(:appearance) }

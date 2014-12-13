@@ -11,6 +11,10 @@ module Battlenet
         super(options)
       end
 
+      def profile
+        get_data(@endpoint, {})
+      end
+
       def achievements
         get_data(@endpoint, {:fields => 'achievements'})
       end
