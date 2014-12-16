@@ -21,65 +21,37 @@ end
 ````ruby
 client = Battlenet.WOWClient
 
-# Available Methods
-client.achievement(id)
-client.auction_data_status(realm)
+achievement = client.achievement({:achievement => 'achievement_id'})
+auction_data = client.auction({:realm => 'realm'})
+character = client.character_profile({:realm => 'realm', :character_name => 'character_name'})
 
-client.battlepet_ability(ability_id)
-client.battlepet_species(species_id)
-client.battlepet_stats(species_id)
+# TODO: character methods
 
-client.challengemode_realm_leaderboard(realm)
-client.challengemode_region_leaderboard
+guild = client.guild_profile({:realm => 'realm', :guild_name => 'guild_name'})
 
-client.character_profile(realm, character_name)
-client.character_achievements(realm, character_name)
-client.character_appearance(realm, character_name)
-client.character_feed(realm, character_name)
-client.character_guild(realm, character_name)
-client.character_hunter_pets(realm, character_name)
-client.character_items(realm, character_name)
-client.character_mounts(realm, character_name)
-client.character_pets(realm, character_name)
-client.character_pet_slots(realm, character_name)
-client.character_progression(realm, character_name)
-client.character_pvp(realm, character_name)
-client.character_quests(realm, character_name)
-client.character_reputation(realm, character_name)
-client.character_stats(realm, character_name)
-client.character_talents(realm, character_name)
-client.character_titles(realm, character_name)
-client.character_audit(realm, character_name)
+# TODO: guild methods
 
-client.data_battlegroups
-client.data_character_races
-client.data_character_classes
-client.data_character_achievements
-client.data_guild_rewards
-client.data_guild_perks
-client.data_guild_achievements
-client.data_item_classes
-client.data_talents
-client.data_pet_types
+data = client.data
 
-client.guild_profile(realm, guild_name)
-client.guild_members(realm, guild_name)
-client.guild_achievements(realm, guild_name)
-client.guild_news(realm, guild_name)
-client.guild_challenge(realm, guild_name)
+# TODO: data methods
 
-client.item(item_id)
-client.item_set(set_id)
+item = client.item({:item => 'item_id'})
+puts item.details
 
-client.pvp_leaderboards(bracket)
+item = client.item_set({:item_set => 'item_set_id'})
+puts item.details
 
-client.quest(quest_id)
+pvp_leaderboards = client.pvp_leaderboards({:bracket => 'bracket'})
+puts pvp_leaderboards.details
 
-client.realm_status
+quest = client.quest({:quest => 'quest_id'})
+puts quest.details
 
-client.recipe(recipe_id)
+recipe = client.recipe({:recipe => 'recipe_id'})
+puts recipe.details
 
-client.spell(spell_id)
+spell = client.spell({:spell => 'spell_id'})
+puts spell.details
 
 ````
 
