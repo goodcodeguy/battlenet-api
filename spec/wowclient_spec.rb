@@ -19,14 +19,11 @@ describe Battlenet::WOWClient do
   it { should respond_to(:item_set) }
   it { should respond_to(:achievement) }
   it { should respond_to(:auction) }
-
   it { should respond_to(:pvp_leaderboard) }
   it { should respond_to(:quest) }
-  it { should respond_to(:realm_status) }
-
+  it { should respond_to(:realm) }
   it { should respond_to(:recipe) }
   it { should respond_to(:spell) }
-
   it { should respond_to(:data) }
 
 end
