@@ -3,7 +3,7 @@ module Battlenet
     class Item < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:item)
+        @item          = options.delete(:item)
 
         @endpoint       = "/item/#{@item}"
 
