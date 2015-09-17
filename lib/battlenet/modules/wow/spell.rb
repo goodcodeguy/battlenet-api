@@ -3,9 +3,9 @@ module Battlenet
     class Spell < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:spell)
+        @spell          = options.delete(:spell)
 
-        @endpoint       = "/item/#{@spell}"
+        @endpoint       = "/spell/#{@spell}"
 
         super(options)
       end
