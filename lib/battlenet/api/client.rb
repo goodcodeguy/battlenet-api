@@ -30,6 +30,8 @@ module Battlenet
           'kr.api.battle.net'
         when :tw
           'tw.api.battle.net'
+        when :cn
+          'api.battlenet.com.cn'
         else
           raise "Invalid region: #{region.to_s}"
         end
