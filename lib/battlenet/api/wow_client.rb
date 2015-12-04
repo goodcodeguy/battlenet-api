@@ -13,8 +13,6 @@ require 'battlenet/modules/wow/recipe'
 require 'battlenet/modules/wow/spell'
 require 'battlenet/modules/wow/data'
 
-#Dir[File.expand_path('../modules/wow/*.rb', __FILE__)].each{|f| require f}
-
 module Battlenet
 
   class WOWClient < Client
@@ -27,64 +25,59 @@ module Battlenet
     end
 
     def character_profile(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::CharacterProfile.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::CharacterProfile)
     end
 
     def guild_profile(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::GuildProfile.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::GuildProfile)
     end
 
     def item(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Item.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Item)
     end
 
     def item_set(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::ItemSet.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::ItemSet)
     end
 
     def achievement(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Achievement.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Achievement)
     end
 
     def auction(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Auction.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Auction)
     end
 
     def pvp_leaderboard(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::PVPLeaderboard.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::PVPLeaderboard)
     end
 
     def quest(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Quest.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Quest)
     end
 
     def realm(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Realm.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Realm)
     end
 
     def recipe(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Recipe.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Recipe)
     end
 
     def spell(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Spell.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Spell)
     end
 
     def data(options = {})
-      opts = options.merge({:client => self})
-      Battlenet::WOW::Data.new(opts)
+      merge_options_and_return_obj(options, Battlenet::WOW::Data)
     end
+
+    private
+
+      def merge_options_and_return_obj(options, obj)
+        opts = options.merge({:client => self})
+        obj.new(opts)
+      end
 
   end
 
