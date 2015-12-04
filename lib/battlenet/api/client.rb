@@ -1,6 +1,7 @@
 require 'battlenet/api/version'
 require 'battlenet/api/api_response'
 require 'httparty'
+require 'addressable/uri'
 
 module Battlenet
 
@@ -39,7 +40,7 @@ module Battlenet
 
       def endpoint
           raise "Invalid Game Endpoint" if @endpoint == nil
-          @endpoint
+          Addressable::URI.encode(@endpoint)
       end
 
       def get(path, params = {})
