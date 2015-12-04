@@ -3,8 +3,8 @@ module Battlenet
     class CharacterProfile < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = CGI.escape(options.delete(:realm).gsub(' ', '-'))
-        @character_name = CGI.escape(options.delete(:character_name))
+        @realm          = options.delete(:realm)
+        @character_name = options.delete(:character_name)
 
         @endpoint       = "/character/#{@realm}/#{@character_name}"
 
