@@ -1,6 +1,21 @@
-require 'battlenet/api'
+require 'spec_helper'
 
 describe Battlenet::WOW::CharacterProfile do
+
+  context "when looking up a character" do
+    before do
+      Battlenet.configure do |config|
+        config.api_key = ENV['BATTLENET_API_KEY']
+        config.region  = :us
+      end
+      @wow_client = Battlenet.WOWClient
+    end
+
+    it "should be able to find 'brick' on 'Emerald Dream'" do
+
+    end
+
+  end
 
   it { should respond_to(:profile) }
   it { should respond_to(:achievements) }

@@ -1,4 +1,4 @@
-require 'battlenet/api'
+require 'spec_helper'
 
 describe Battlenet::WOW::GuildProfile do
 
