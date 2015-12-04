@@ -6,8 +6,6 @@ require File.expand_path('../api/wow_client', __FILE__)
 require File.expand_path('../api/d3_client', __FILE__)
 require File.expand_path('../api/sc2_client', __FILE__)
 
-
-
 module Battlenet
   extend Configuration
 
