@@ -1,7 +1,7 @@
 require 'battlenet/api'
 
 Battlenet.configure do |config|
-  config.api_key = '5g856v32mx5bwx3rwxzkt9z9yrehtuq2'
+  config.api_key = 'api-key'
   config.region  = :us
 end
 
