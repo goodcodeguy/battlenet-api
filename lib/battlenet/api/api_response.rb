@@ -10,7 +10,8 @@ module Battlenet
 
     def get_data(path, options)
       unless @client.nil?
-        @data = @client.get(path, options)
+        response = @client.get(path, options)
+        @data = response.parsed_response
       end
     end
 
