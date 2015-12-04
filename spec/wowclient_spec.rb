@@ -13,7 +13,7 @@ describe Battlenet::WOWClient do
     expect(c.api_key).to eq(ENV['BATTLENET_API_KEY'])
   end
 
-  it { should respond_to(:character_profile) }
+  it { should respond_to(:character) }
   it { should respond_to(:guild_profile) }
   it { should respond_to(:item) }
   it { should respond_to(:item_set) }

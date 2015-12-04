@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Battlenet::WOW::CharacterProfile do
+describe Battlenet::WOW::Character do
 
   context "when looking up a character" do
     before do
@@ -11,8 +11,18 @@ describe Battlenet::WOW::CharacterProfile do
       @wow_client = Battlenet.WOWClient
     end
 
-    it "should be able to find 'brick' on 'Emerald Dream'" do
+    it "should be able to find 'Silverwinter' on 'Sargeras'" do
+      character = @wow_client.character({:realm => 'sargeras', :character_name => 'Silverwinter'})
+      VCR.use_cassette('character/profile') do
+        expect(character.profile['name']).to eq('Silverwinter')
+      end
+    end
 
+    it "should not be able to find 'ThisCharacterShouldntExist' on 'Sargeras'" do
+      character = @wow_client.character({realm: 'sargeras', character_name: 'ThisCharacterShouldntExist'})
+      VCR.use_cassette('character/invalid_character') do
+        expect(character.profile['reason']).to eq('Character not found.')
+      end
     end
 
   end

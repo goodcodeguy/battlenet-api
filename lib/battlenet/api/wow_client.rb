@@ -1,6 +1,6 @@
 require 'battlenet/api/client'
 
-require 'battlenet/modules/wow/character_profile'
+require 'battlenet/modules/wow/character'
 require 'battlenet/modules/wow/guild_profile'
 require 'battlenet/modules/wow/item'
 require 'battlenet/modules/wow/item_set'
@@ -24,8 +24,8 @@ module Battlenet
       super(client_settings)
     end
 
-    def character_profile(options = {})
-      merge_options_and_return_obj(options, Battlenet::WOW::CharacterProfile)
+    def character(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Character)
     end
 
     def guild_profile(options = {})

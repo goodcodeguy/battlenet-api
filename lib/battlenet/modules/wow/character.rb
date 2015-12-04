@@ -1,6 +1,6 @@
 module Battlenet
   module WOW
-    class CharacterProfile < Battlenet::APIResponse
+    class Character < Battlenet::APIResponse
 
       def initialize(options={})
         @realm          = options.delete(:realm)
