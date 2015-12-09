@@ -1,6 +1,6 @@
 module Battlenet
   module WOW
-    class GuildProfile < Battlenet::APIResponse
+    class Guild < Battlenet::APIResponse
 
       def initialize(options={})
         @realm          = options.delete(:realm)

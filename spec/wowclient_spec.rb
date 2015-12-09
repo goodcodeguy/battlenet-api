@@ -14,7 +14,7 @@ describe Battlenet::WOWClient do
   end
 
   it { should respond_to(:character) }
-  it { should respond_to(:guild_profile) }
+  it { should respond_to(:guild) }
   it { should respond_to(:item) }
   it { should respond_to(:item_set) }
   it { should respond_to(:achievement) }

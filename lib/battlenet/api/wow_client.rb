@@ -1,7 +1,7 @@
 require 'battlenet/api/client'
 
 require 'battlenet/modules/wow/character'
-require 'battlenet/modules/wow/guild_profile'
+require 'battlenet/modules/wow/guild'
 require 'battlenet/modules/wow/item'
 require 'battlenet/modules/wow/item_set'
 require 'battlenet/modules/wow/achievement'
@@ -28,8 +28,8 @@ module Battlenet
       merge_options_and_return_obj(options, Battlenet::WOW::Character)
     end
 
-    def guild_profile(options = {})
-      merge_options_and_return_obj(options, Battlenet::WOW::GuildProfile)
+    def guild(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Guild)
     end
 
     def item(options = {})
