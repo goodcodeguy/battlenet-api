@@ -23,11 +23,11 @@ client = Battlenet.WOWClient
 
 achievement = client.achievement({:achievement => 'achievement_id'})
 auction_data = client.auction({:realm => 'realm'})
-character = client.character_profile({:realm => 'realm', :character_name => 'character_name'})
+character = client.character({:realm => 'realm', :character_name => 'character_name'})
 
 # TODO: character methods
 
-guild = client.guild_profile({:realm => 'realm', :guild_name => 'guild_name'})
+guild = client.guild({:realm => 'realm', :guild_name => 'guild_name'})
 
 # TODO: guild methods
 
