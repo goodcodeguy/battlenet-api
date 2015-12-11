@@ -16,7 +16,6 @@ module Battlenet
         Configuration::OPTIONS_KEYS.each do |key|
           send("#{key}=", options[key])
         end
-
         self.class.base_uri "https://#{domain}#{endpoint}"
       end
 
@@ -39,7 +38,7 @@ module Battlenet
 
       def endpoint
           raise "Invalid Game Endpoint" if @endpoint == nil
-          Addressable::URI.encode(@endpoint)
+          @endpoint
       end
 
       def get(path, params = {})
@@ -58,7 +57,7 @@ module Battlenet
           options[:query].merge!({ :apikey => @api_key })
         end
 
-        response = self.class.send(verb, path, options)
+        response = self.class.send(verb, Addressable::URI.encode(path), options)
       end
 
     end
