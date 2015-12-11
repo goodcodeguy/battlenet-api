@@ -25,6 +25,13 @@ describe Battlenet::WOW::Character do
       end
     end
 
+    it "should be able to find 'pftpft' on 'emerald dream' (handle spaces)" do
+      character = @wow_client.character({:realm => 'emerald dream', :character_name => 'pftpft'})
+      VCR.use_cassette('character/profile_pft') do
+        expect(character.profile['name']).to eq('Pftpft')
+      end
+    end
+
     it "should not be able to find 'ThisCharacterShouldntExist' on 'Sargeras'" do
       character = @wow_client.character({realm: 'sargeras', character_name: 'ThisCharacterShouldntExist'})
       VCR.use_cassette('character/invalid_character') do
