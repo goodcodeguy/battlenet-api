@@ -18,7 +18,6 @@ module Battlenet
         end
 
         self.class.base_uri "https://#{domain}#{endpoint}"
-
       end
 
       def domain

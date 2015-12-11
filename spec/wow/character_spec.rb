@@ -18,6 +18,13 @@ describe Battlenet::WOW::Character do
       end
     end
 
+    it "should be able to find 'whispä' on 'frostmourne' (handle foreign characters)" do
+      character = @wow_client.character({:realm => 'frostmourne', :character_name => 'whispä'})
+      VCR.use_cassette('character/profile_whispä') do
+        expect(character.profile['name']).to eq('Whispä')
+      end
+    end
+
     it "should not be able to find 'ThisCharacterShouldntExist' on 'Sargeras'" do
       character = @wow_client.character({realm: 'sargeras', character_name: 'ThisCharacterShouldntExist'})
       VCR.use_cassette('character/invalid_character') do
