@@ -8,10 +8,5 @@ describe Battlenet::Client do
         config.region  = :eu
       end
     end
-
-    it "should escape spaces in realm names" do
-      c = Battlenet::Client.new({domain: 'http://www.test.com', endpoint: "/emerald dream/mal'ganis"})
-      expect(c.endpoint).to eq('/emerald%20dream/mal\'ganis')
-    end
   end
 end
