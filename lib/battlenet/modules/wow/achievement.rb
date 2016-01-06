@@ -3,8 +3,7 @@ module Battlenet
     class Achievement < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:achievement)
-
+        @achievement    = options.delete(:achievement)
         @endpoint       = "/achievement/#{@achievement}"
 
         super(options)
