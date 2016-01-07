@@ -21,13 +21,13 @@ end
 ````ruby
 client = Battlenet.WOWClient
 
-achievement = client.achievement({:achievement => 'achievement_id'})
-auction_data = client.auction({:realm => 'realm'})
-character = client.character({:realm => 'realm', :character_name => 'character_name'})
+achievement = client.achievement({achievement: 'achievement_id'})
+auction_data = client.auction({realm: 'realm_id'})
+character = client.character({realm: 'realm_id', character_name: 'character_name'})
 
 # TODO: character methods
 
-guild = client.guild({:realm => 'realm', :guild_name => 'guild_name'})
+guild = client.guild({realm: 'realm', guild_name: 'guild_name'})
 
 # TODO: guild methods
 
@@ -35,22 +35,22 @@ data = client.data
 
 # TODO: data methods
 
-item = client.item({:item => 'item_id'})
+item = data.item({item: 'item_id'})
 puts item.details
 
-item = client.item_set({:item_set => 'item_set_id'})
+item = data.item_set({item_set: 'item_set_id'})
 puts item.details
 
-pvp_leaderboards = client.pvp_leaderboards({:bracket => 'bracket'})
+pvp_leaderboards = data.pvp_leaderboards({bracket: 'bracket'})
 puts pvp_leaderboards.details
 
-quest = client.quest({:quest => 'quest_id'})
+quest = data.quest({quest: 'quest_id'})
 puts quest.details
 
-recipe = client.recipe({:recipe => 'recipe_id'})
+recipe = data.recipe({recipe: 'recipe_id'})
 puts recipe.details
 
-spell = client.spell({:spell => 'spell_id'})
+spell = data.spell({spell: 'spell_id'})
 puts spell.details
 
 ````
@@ -61,13 +61,15 @@ puts spell.details
 client = Battlenet.D3Client
 
 #Available Methods
+data = client.data
 
-client.data_item(data_id)
-client.data_follower(follower_id)
-client.data_artisan(artisan_id)
+item = data.item({item: 'item_id'})
+follower = data.follower({follower: 'follower_id'})
+artisan = data.artisan({artisan: 'artisan_id'})
 
-client.career_profile(battletag)
-client.hero_profile(battletag,hero_id)
+profile = client.profile({battletag: 'battletag'})
+puts profile.career
+puts profile.hero(hero_id)
 ````
 
 ### Starcraft 2 Client
@@ -76,15 +78,18 @@ client.hero_profile(battletag,hero_id)
 client = Battlenet.S2Client
 
 #Available Methods
+data = client.data
 
-client.achievements
-client.rewards
+achievements = data.achievements
+rewards = data.rewards
 
-client.ladder(ladder_id)
+ladder = client.ladder({ladder_id: 'ladder_id'})
+puts ladder.details
 
-client.profile(id, region, name)
-client.profile_ladders(id, region, name)
-client.profile_match_history(id, region, name)
+profile = client.profile({id: 'id', region: 'region', name: 'name'})
+puts profile.details
+puts profile.ladders
+puts profile.match_history
 ````
 
 
@@ -92,6 +97,3 @@ client.profile_match_history(id, region, name)
 
 - Community OAuth Profile APIs
 - Account APIs
-- Unit Tests for All APIs
-
-- Refactor Client Code to Utilize OpenStruct on JSON Responses
