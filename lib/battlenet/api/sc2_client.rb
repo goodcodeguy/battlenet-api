@@ -17,6 +17,18 @@ module Battlenet
       super(client_settings)
     end
 
+    def data(options = {})
+      merge_options_and_return_obj(options, Battlenet::SC2::Data)
+    end
+
+    def ladder(options = {})
+      merge_options_and_return_obj(options, Battlenet::SC2::Ladder)
+    end
+
+    def profile(options = {})
+      merge_options_and_return_obj(options, Battlenet::SC2::Profile)
+    end
+
   end
 
 end

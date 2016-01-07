@@ -13,13 +13,8 @@ describe Battlenet::SC2Client do
     expect(c.api_key).to eq(ENV['BATTLENET_API_KEY'])
   end
 
-  it { should respond_to(:achievements) }
-  it { should respond_to(:rewards) }
-
+  it { should respond_to(:data) }
   it { should respond_to(:ladder) }
-
   it { should respond_to(:profile) }
-  it { should respond_to(:profile_ladders) }
-  it { should respond_to(:profile_match_history) }
 
 end
