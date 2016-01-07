@@ -13,8 +13,7 @@ describe Battlenet::D3::Profile do
 
   end
 
-  it { should respond_to(:item) }
-  it { should respond_to(:follower) }
-  it { should respond_to(:artisan) }
-
+  it { should respond_to(:career) }
+  it { should respond_to(:hero) }
+  
 end
