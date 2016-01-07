@@ -2,12 +2,18 @@ require 'uri'
 
 module Battlenet
   module D3
-    def career_profile(battletag, options = {})
-      get "/profile/#{battletag}", options
-    end
+    class Profile < Battlenet::APIResponse
+      def initialize(options={})
+        super(options)
+      end
 
-    def hero_profile(battletag, id, options = {})
-      get "/profile/#{battletag}/hero/#{id}", options
+      def career(battletag, options = {})
+        get_data("/profile/#{battletag}", options)
+      end
+
+      def hero(battletag, hero_id, options = {})
+        get_data("/profile/#{battletag}/hero/#{hero_id}", options)
+      end
     end
   end
 end

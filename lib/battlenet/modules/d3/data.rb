@@ -2,16 +2,22 @@ require 'uri'
 
 module Battlenet
   module D3
-    def data_item(data, options = {})
-      get "/data/item/#{data}", options
-    end
+    class Data < Battlenet::APIResponse
+      def initialize(options={})
+        super(options)
+      end
 
-    def data_follower(follower, options = {})
-      get "/data/follower/#{follower}", options
-    end
+      def item(item, options = {})
+        get_data("/data/item/#{item}", options)
+      end
 
-    def data_artisan(artisan, options = {})
-      get "/data/artisan/#{artisan}", options
+      def follower(follower, options = {})
+        get_data("/data/follower/#{follower}", options)
+      end
+
+      def artisan(artisan, options = {})
+        get_data("/data/artiasn/#{artisan}", options)
+      end
     end
   end
 end

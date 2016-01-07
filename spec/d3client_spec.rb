@@ -13,11 +13,7 @@ describe Battlenet::D3Client do
     expect(c.api_key).to eq(ENV['BATTLENET_API_KEY'])
   end
 
-  it { should respond_to(:data_item) }
-  it { should respond_to(:data_follower) }
-  it { should respond_to(:data_artisan) }
-
-  it { should respond_to(:career_profile) }
-  it { should respond_to(:hero_profile) }
+  it { should respond_to(:data) }
+  it { should respond_to(:profile) }
 
 end
