@@ -13,7 +13,7 @@ describe Battlenet::SC2::Profile do
 
   end
 
-  it { should respond_to(:info) }
+  it { should respond_to(:details) }
   it { should respond_to(:ladders) }
   it { should respond_to(:match_history) }
 

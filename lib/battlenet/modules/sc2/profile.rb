@@ -4,7 +4,7 @@ module Battlenet
   module SC2
     class Profile < Battlenet::APIResponse
       def initialize(options={})
-        @profile_id     = options.delete(:profile_id)
+        @profile_id     = options.delete(:id)
         @region         = options.delete(:region)
         @name           = options.delete(:name)
 
@@ -13,7 +13,7 @@ module Battlenet
         super(options)
       end
 
-      def info(options = {})
+      def details(options = {})
         get_data(@endpoint, options)
       end
 

@@ -13,6 +13,6 @@ describe Battlenet::SC2::Ladder do
 
   end
 
-  it { should respond_to(:info) }
+  it { should respond_to(:details) }
 
 end
