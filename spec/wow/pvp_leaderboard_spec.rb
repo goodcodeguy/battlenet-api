@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Battlenet::SC2::Ladder do
+describe Battlenet::WOW::PVPLeaderboard do
 
   it { should respond_to(:details) }
 
