@@ -11,24 +11,24 @@ module Battlenet
         super(options)
       end
 
-      def profile
-        get_data(@endpoint, {})
+      def profile(options = {})
+        get_data(@endpoint, options)
       end
 
-      def members
-        get_data(@endpoint, {:fields => 'members'})
+      def members(options = {})
+        get_data(@endpoint, options.merge({fields: 'members'}))
       end
 
-      def achievements
-        get_data(@endpoint, {:fields => 'achievements'})
+      def achievements(options = {})
+        get_data(@endpoint, options.merge({fields: 'achievements'}))
       end
 
-      def news
-        get_data(@endpoint, {:fields => 'news'})
+      def news(options = {})
+        get_data(@endpoint, options.merge({fields: 'news'}))
       end
 
-      def challenge
-        get_data(@endpoint, {:fields => 'challenge'})
+      def challenge(options = {})
+        get_data(@endpoint, options.merge({fields: 'challenge'}))
       end
     end
   end

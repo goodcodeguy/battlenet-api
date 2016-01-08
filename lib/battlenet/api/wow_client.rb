@@ -12,6 +12,9 @@ require 'battlenet/modules/wow/realm'
 require 'battlenet/modules/wow/recipe'
 require 'battlenet/modules/wow/spell'
 require 'battlenet/modules/wow/data'
+require 'battlenet/modules/wow/challenge'
+require 'battlenet/modules/wow/mount'
+require 'battlenet/modules/wow/pet'
 
 module Battlenet
 
@@ -26,6 +29,14 @@ module Battlenet
 
     def character(options = {})
       merge_options_and_return_obj(options, Battlenet::WOW::Character)
+    end
+
+    def mount(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Mount)
+    end
+
+    def challenge(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Challenge)
     end
 
     def guild(options = {})
@@ -70,6 +81,10 @@ module Battlenet
 
     def data(options = {})
       merge_options_and_return_obj(options, Battlenet::WOW::Data)
+    end
+
+    def pet(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Pet)
     end
 
     private

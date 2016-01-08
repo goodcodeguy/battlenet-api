@@ -11,76 +11,80 @@ module Battlenet
         super(options)
       end
 
-      def profile
-        get_data(@endpoint, {})
+      def profile(options = {})
+        get_data(@endpoint, options)
       end
 
-      def achievements
-        get_data(@endpoint, {:fields => 'achievements'})
+      def achievements(options = {})
+        get_data(@endpoint, options.merge({fields: 'achievements'}))
       end
 
-      def appearance
-        get_data(@endpoint, {:fields => 'appearance'})
+      def appearance(options = {})
+        get_data(@endpoint, options.merge({fields: 'appearance'}))
       end
 
-      def feed
-        get_data(@endpoint, {:fields => 'feed'})
+      def feed(options = {})
+        get_data(@endpoint, options.merge({fields: 'feed'}))
       end
 
-      def guild
-        get_data(@endpoint, {:fields => 'guild'})
+      def guild(options = {})
+        get_data(@endpoint, options.merge({fields: 'guild'}))
       end
 
-      def hunter_pets
-        get_data(@endpoint, {:fields => 'hunterPets'})
+      def hunter_pets(options = {})
+        get_data(@endpoint, options.merge({fields: 'hunterPets'}))
       end
 
-      def pets
-        get_data(@endpoint, {:fields => 'pets'})
+      def pets(options = {})
+        get_data(@endpoint, options.merge({fields: 'pets'}))
       end
 
-      def items
-        get_data(@endpoint, {:fields => 'items'})
+      def items(options = {})
+        get_data(@endpoint, options.merge({fields: 'items'}))
       end
 
-      def mounts
-        get_data(@endpoint, {:fields => 'mounts'})
+      def mounts(options = {})
+        get_data(@endpoint, options.merge({fields: 'mounts'}))
       end
 
-      def pet_slots
-        get_data(@endpoint, {:fields => 'petSlots'})
+      def pet_slots(options = {})
+        get_data(@endpoint, options.merge({fields: 'petSlots'}))
       end
 
-      def progression
-        get_data(@endpoint, {:fields => 'progression'})
+      def progression(options = {})
+        get_data(@endpoint, options.merge({fields: 'progression'}))
       end
 
-      def pvp
-        get_data(@endpoint, {:fields => 'pvp'})
+      def pvp(options = {})
+        get_data(@endpoint, options.merge({fields: 'pvp'}))
       end
 
-      def quests
-        get_data(@endpoint, {:fields => 'quests'})
+      def quests(options = {})
+        get_data(@endpoint, options.merge({fields: 'quests'}))
       end
 
-      def reputation
-        get_data(@endpoint, {:fields => 'reputation'})
+      def reputation(options = {})
+        get_data(@endpoint, options.merge({fields: 'reputation'}))
       end
 
-      def stats
-        get_data(@endpoint, {:fields => 'stats'})
+      def statistics(options = {})
+        get_data(@endpoint, options.merge({fields: 'statistics'}))
       end
 
-      def talents
-        get_data(@endpoint, {:fields => 'talents'})
+      def stats(options = {})
+        get_data(@endpoint, options.merge({fields: 'stats'}))
       end
 
-      def titles
-        get_data(@endpoint, {:fields => 'titles'})
+      def talents(options = {})
+        get_data(@endpoint, options.merge({fields: 'talents'}))
       end
 
-      def audit
-        get_data(@endpoint, {:fields => 'audit'})
+      def titles(options = {})
+        get_data(@endpoint, options.merge({fields: 'titles'}))
+      end
+
+      def audit(options = {})
+        get_data(@endpoint, options.merge({fields: 'audit'}))
       end
 
     end

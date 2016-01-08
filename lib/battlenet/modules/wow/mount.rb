@@ -1,12 +1,9 @@
 module Battlenet
   module WOW
-    class Spell < Battlenet::APIResponse
+    class Mount < Battlenet::APIResponse
 
       def initialize(options={})
-        @spell          = options.delete(:spell)
-
-        @endpoint       = "/spell/#{@spell}"
-
+        @endpoint       = "/mount"
         super(options)
       end
 

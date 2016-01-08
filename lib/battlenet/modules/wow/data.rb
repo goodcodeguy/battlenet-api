@@ -6,44 +6,44 @@ module Battlenet
         super(options)
       end
 
-      def battlegroups
-        get_data("/data/battlegroups", {})
+      def battlegroups(options = {})
+        get_data("/data/battlegroups", options)
       end
 
-      def character_races
-        get_data("/data/character/races", {})
+      def character_races(options = {})
+        get_data("/data/character/races", options)
       end
 
-      def character_classes
-        get_data("/data/character/classes", {})
+      def character_classes(options = {})
+        get_data("/data/character/classes", options)
       end
 
-      def character_achievements
-        get_data("/data/character/achievements", {})
+      def character_achievements(options = {})
+        get_data("/data/character/achievements", options)
       end
 
-      def guild_rewards
-        get_data("/data/guild/rewards", {})
+      def guild_rewards(options = {})
+        get_data("/data/guild/rewards", options)
       end
 
-      def guild_perks
-        get_data("/data/guild/perks", {})
+      def guild_perks(options = {})
+        get_data("/data/guild/perks", options)
       end
 
-      def guild_achievements
-        get_data("/data/guild/achievements", {})
+      def guild_achievements(options = {})
+        get_data("/data/guild/achievements", options)
       end
 
-      def item_classes
-        get_data("/data/item/clases", {})
+      def item_classes(options = {})
+        get_data("/data/item/clases", options)
       end
 
-      def talents
-        get_data("/dava/talents", {})
+      def talents(options = {})
+        get_data("/dava/talents", options)
       end
 
-      def pet_types
-        get_data("/data/pet/types", {})
+      def pet_types(options = {})
+        get_data("/data/pet/types", options)
       end
 
     end

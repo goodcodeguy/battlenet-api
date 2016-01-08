@@ -14,6 +14,7 @@ describe Battlenet::WOWClient do
   end
 
   it { should respond_to(:character) }
+  it { should respond_to(:mount) }
   it { should respond_to(:guild) }
   it { should respond_to(:item) }
   it { should respond_to(:item_set) }

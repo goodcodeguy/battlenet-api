@@ -10,8 +10,8 @@ module Battlenet
         super(options)
       end
 
-      def details
-        get_data(@endpoint, {})
+      def details(options = {})
+        get_data(@endpoint, options)
       end
 
     end
