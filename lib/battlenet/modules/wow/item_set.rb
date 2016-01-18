@@ -4,7 +4,6 @@ module Battlenet
 
       def initialize(options={})
         @realm          = options.delete(:item_set)
-
         @endpoint       = "/item/set/#{@item_set}"
 
         super(options)

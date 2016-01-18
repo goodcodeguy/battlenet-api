@@ -7,7 +7,6 @@ module Battlenet
         @profile_id     = options.delete(:id)
         @region         = options.delete(:region)
         @name           = options.delete(:name)
-
         @endpoint       = "/profile/#{@profile_id}/#{@region}/#{@name}"
 
         super(options)

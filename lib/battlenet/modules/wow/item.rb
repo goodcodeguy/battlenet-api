@@ -4,7 +4,6 @@ module Battlenet
 
       def initialize(options={})
         @item          = options.delete(:item)
-
         @endpoint       = "/item/#{@item}"
 
         super(options)

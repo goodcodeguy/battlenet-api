@@ -3,8 +3,7 @@ module Battlenet
     class PVPLeaderboard < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:bracket)
-
+        @bracket        = options.delete(:bracket)
         @endpoint       = "/leaderboard/#{@bracket}"
 
         super(options)

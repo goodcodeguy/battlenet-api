@@ -3,8 +3,7 @@ module Battlenet
     class Quest < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:quest)
-
+        @quest          = options.delete(:quest)
         @endpoint       = "/quest/#{@quest}"
 
         super(options)

@@ -5,7 +5,6 @@ module Battlenet
       def initialize(options={})
         @realm          = options.delete(:realm)
         @guild_name     = options.delete(:guild_name)
-
         @endpoint       = "/guild/#{@realm}/#{@guild_name}"
 
         super(options)

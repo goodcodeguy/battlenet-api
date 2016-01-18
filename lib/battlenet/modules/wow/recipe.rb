@@ -3,8 +3,7 @@ module Battlenet
     class Recipe < Battlenet::APIResponse
 
       def initialize(options={})
-        @realm          = options.delete(:recipe)
-
+        @recipe         = options.delete(:recipe)
         @endpoint       = "/recipe/#{@recipe}"
 
         super(options)

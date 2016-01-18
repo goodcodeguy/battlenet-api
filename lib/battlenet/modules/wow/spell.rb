@@ -4,7 +4,6 @@ module Battlenet
 
       def initialize(options={})
         @spell          = options.delete(:spell)
-
         @endpoint       = "/spell/#{@spell}"
 
         super(options)
