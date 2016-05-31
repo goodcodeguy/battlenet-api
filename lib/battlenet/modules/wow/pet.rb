@@ -3,7 +3,7 @@ module Battlenet
     class Pet < Battlenet::APIResponse
 
       def initialize(options={})
-        @endpoint       = "/wow/pet"
+        @endpoint       = "/pet"
         super(options)
       end
 
