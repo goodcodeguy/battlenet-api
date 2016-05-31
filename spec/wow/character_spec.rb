@@ -10,35 +10,6 @@ describe Battlenet::WOW::Character do
       end
       @wow_client = Battlenet.WOWClient
     end
-
-    it "should be able to find 'Silverwinter' on 'Sargeras'" do
-      character = @wow_client.character({:realm => 'sargeras', :character_name => 'Silverwinter'})
-      VCR.use_cassette('character/profile') do
-        expect(character.profile['name']).to eq('Silverwinter')
-      end
-    end
-
-    it "should be able to find 'whispä' on 'frostmourne' (handle foreign characters)" do
-      character = @wow_client.character({:realm => 'frostmourne', :character_name => 'whispä'})
-      VCR.use_cassette('character/profile_whispä') do
-        expect(character.profile['name']).to eq('Whispä')
-      end
-    end
-
-    it "should be able to find 'pftpft' on 'emerald dream' (handle spaces)" do
-      character = @wow_client.character({:realm => 'emerald dream', :character_name => 'pftpft'})
-      VCR.use_cassette('character/profile_pft') do
-        expect(character.profile['name']).to eq('Pftpft')
-      end
-    end
-
-    it "should not be able to find 'ThisCharacterShouldntExist' on 'Sargeras'" do
-      character = @wow_client.character({realm: 'sargeras', character_name: 'ThisCharacterShouldntExist'})
-      VCR.use_cassette('character/invalid_character') do
-        expect(character.profile['reason']).to eq('Character not found.')
-      end
-    end
-
   end
 
   it { should respond_to(:profile) }
