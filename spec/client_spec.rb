@@ -10,12 +10,12 @@ describe Battlenet::Client do
     @client = Battlenet::Client.new
   end
 
-  it "should translate foreign characters for URLS (whispä)" do
-    @client.
-  end
-
-  it "should translate spaces accurately for URLS (emerald dream)" do
-
-  end
+  # it "should translate foreign characters for URLS (whispä)" do
+  #   character = @client.character({realm: 'sargeras', character_name: 'Silverwinter'})
+  # end
+  #
+  # it "should translate spaces accurately for URLS (emerald dream)" do
+  #   character = @client.character({:realm => 'emerald dream', :character_name => 'pftpft'})
+  # end
 
 end
