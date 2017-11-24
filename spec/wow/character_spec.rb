@@ -23,6 +23,7 @@ describe Battlenet::WOW::Character do
   it { should respond_to(:mounts) }
   it { should respond_to(:pet_slots) }
   it { should respond_to(:progression) }
+  it { should respond_to(:professions) }
   it { should respond_to(:pvp) }
   it { should respond_to(:quests) }
   it { should respond_to(:reputation) }
