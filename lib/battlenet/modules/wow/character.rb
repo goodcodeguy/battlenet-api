@@ -50,6 +50,10 @@ module Battlenet
         get_data(@endpoint, options.merge({fields: 'petSlots'}))
       end
 
+      def professions(options = {})
+        get_data(@endpoint, options.merge({fields: 'professions'}))
+      end
+
       def progression(options = {})
         get_data(@endpoint, options.merge({fields: 'progression'}))
       end
