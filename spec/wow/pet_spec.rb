@@ -10,15 +10,6 @@ describe Battlenet::WOW::Pet do
       end
       @wow_client = Battlenet.WOWClient
     end
-
-    it "should be able to fetch details" do
-      sid = 1134
-      VCR.use_cassette("pet/species/#{sid}") do
-        species = @wow_client.pet.species(sid)
-        expect(species['speciesId']).to eq(sid)
-        expect(species).to have_key('abilities')
-      end
-    end
   end
 
   it { should respond_to(:master_list) }
