@@ -15,6 +15,7 @@ require 'battlenet/modules/wow/data'
 require 'battlenet/modules/wow/challenge'
 require 'battlenet/modules/wow/mount'
 require 'battlenet/modules/wow/pet'
+require 'battlenet/modules/wow/boss'
 
 module Battlenet
 
@@ -85,6 +86,10 @@ module Battlenet
 
     def pet(options = {})
       merge_options_and_return_obj(options, Battlenet::WOW::Pet)
+    end
+
+    def boss(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Boss)
     end
 
     private
