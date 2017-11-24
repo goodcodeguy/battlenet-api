@@ -16,6 +16,7 @@ require 'battlenet/modules/wow/challenge'
 require 'battlenet/modules/wow/mount'
 require 'battlenet/modules/wow/pet'
 require 'battlenet/modules/wow/boss'
+require 'battlenet/modules/wow/zone'
 
 module Battlenet
 
@@ -90,6 +91,10 @@ module Battlenet
 
     def boss(options = {})
       merge_options_and_return_obj(options, Battlenet::WOW::Boss)
+    end
+
+    def zone(options = {})
+      merge_options_and_return_obj(options, Battlenet::WOW::Zone)
     end
 
     private
