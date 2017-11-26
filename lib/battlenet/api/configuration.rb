@@ -4,12 +4,14 @@ module Battlenet
     OPTIONS_KEYS = [
       :api_key,
       :region,
+      :locale,
       :endpoint
     ].freeze
 
     DEFAULT_API_KEY  = nil
     DEFAULT_ENDPOINT = nil
     DEFAULT_REGION   = :us
+    DEFAULT_LOCALE   = :en_US
 
     attr_accessor *OPTIONS_KEYS
 
